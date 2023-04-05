@@ -12,7 +12,6 @@ import {
 // import Icon from 'react-native-vector-icons/FontAwesome';
 import axios from 'axios';
 // import weatherConditions from '../utils/weatherConditi
-import {OPEN_WEATHER_API_KEY, UNSPLASH_CLIENT_ID} from '@env';
 
 const Weather = () => {
   const [city, setCity] = useState('');
@@ -50,7 +49,7 @@ const Weather = () => {
   const handleFetchWeather = () => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPEN_WEATHER_API_KEY}&units=metric`,
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=32f5c2500860ff9eb89824308d4b98ef&units=metric`,
       )
       .then(response => {
         setTemperature(response.data.main.temp);
@@ -60,7 +59,7 @@ const Weather = () => {
         setBackgroundImage(getBackgroundImage(response.data.weather[0].main));
         axios
           .get(
-            `https://api.unsplash.com/search/photos?page=1&query=${city}&client_id=${UNSPLASH_CLIENT_ID}`,
+            `https://api.unsplash.com/search/photos?page=1&query=${city}&client_id=z94C25d5iTQEj7FfM8cRZEsMVnMYejAy9agZ084iB40`,
           )
           .then(unsplashResponse =>
             setBackgroundImage(unsplashResponse.data.results[0].urls.regular),
