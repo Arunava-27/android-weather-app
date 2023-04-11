@@ -8,7 +8,7 @@ import {
   StyleSheet,
   ImageBackground,
 } from 'react-native';
-import Weather from './components/weather';
+import Weather from '../src/components/weather';
 
 function Appl() {
   const [email, setEmail] = useState('');
